@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
 
+import { CarInterface } from '../models/car-interface';
 
 import { AuthService } from './auth.service';
 
@@ -10,12 +11,10 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DataApiService {
-  
+export class DataApiService {  
+  constructor(private http: HttpClient, private authService: AuthService) { }
   cars: Observable<any>;
   car: Observable<any>;
-  
-  constructor(private http: HttpClient, private authService: AuthService) { }
   
   headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -38,11 +37,11 @@ export class DataApiService {
     return (this.cars = this.http.get(url_api));
   }  
   
-  saveCar(car){
+  saveCar(car : CarInterface){
     let token = this.authService.getToken();
 
 	const url_api = `http://localhost:3000/api/cars?access_token=${token}`;
-	return this.http.post(url_api, car, { headers: this.headers })
+	return this.http.post<CarInterface>(url_api, car, { headers: this.headers })
 	.pipe(map(data=>data));	
   }	  
   
@@ -51,7 +50,7 @@ export class DataApiService {
     let token = this.authService.getToken();
 
 	const url_api = `http://localhost:3000/api/cars?access_token=${token}`;
-	return this.http.put(url_api, car,  { headers: this.headers })
+	return this.http.put<CarInterface>(url_api, car,  { headers: this.headers })
 	.pipe(map(data=>data));	
   }	  
 
@@ -59,7 +58,7 @@ export class DataApiService {
     let token = this.authService.getToken();
 
 	const url_api = `http://localhost:3000/api/cars?access_token=${token}`;
-	return this.http.delete(url_api, {})
+	return this.http.delete<CarInterface>(url_api, {})
 	.pipe(map(data=>data));	
   }	  
 
