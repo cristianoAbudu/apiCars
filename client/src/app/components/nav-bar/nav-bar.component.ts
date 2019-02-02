@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   constructor() { }
+  public app_name = 'Car Store';
+
 
   ngOnInit() {
   }
