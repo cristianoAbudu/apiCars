@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
   
   getListCars(){
-	this.dataApi.getAllCars()
+	this.dataApi.getNoOffers()
 	.subscribe((cars: CarInterface) => (this.cars = cars) );
   }
   

@@ -37,6 +37,11 @@ export class DataApiService {
     return (this.cars = this.http.get(url_api));
   }  
   
+  getNoOffers() {
+    const url_api = `http://localhost:3000/api/cars?filter[where][ano][gt]=1999`;
+    return (this.cars = this.http.get(url_api));
+  }
+  
   saveCar(car : CarInterface){
     let token = this.authService.getToken();
 
@@ -57,7 +62,7 @@ export class DataApiService {
   deleteCar(id: string){
     let token = this.authService.getToken();
 
-	const url_api = `http://localhost:3000/api/cars?access_token=${token}`;
+	const url_api = `http://localhost:3000/api/cars/${id}/?access_token=${token}`;
 	return this.http.delete<CarInterface>(url_api, {})
 	.pipe(map(data=>data));	
   }	  
