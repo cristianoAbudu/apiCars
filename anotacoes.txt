@@ -33,3 +33,6 @@ node create-lb-tables.js
   "created": "2019-02-02T00:59:21.478Z",
   "userId": 1
 }
+
+
+https://github.com/bezael/loopback3_angular6_bootstrap4/tree/master/apiBooks
