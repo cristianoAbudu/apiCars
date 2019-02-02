@@ -1,0 +1,43 @@
+<!-- Modal -->
+<div id="modalCar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{!this.dataApiService.selectedCar.id ? 'New Car' : 'Update Car'}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-car" #formCar="ngForm" (ngSubmit)="onSaveCar(formCar)">
+			<input type="hidden" id="id" name="id" class="form-control" [(ngModel)]="this.dataApiService.selectedCar.id">          		
+			<div class="form-row">					
+				<div class="form-group">
+					<label for="">Fabricante</label>
+					<input type="text" id="fabricante" name="fabricante" class="form-control" placeholder="Fabricante" [(ngModel)]="this.dataApiService.selectedCar.fabricante">
+				</div>
+			</div>
+			<div class="form-row">					
+			  <div class="form-group">
+				<label for="">Modelo</label>
+				<input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo" [(ngModel)]="this.dataApiService.selectedCar.modelo">
+			  </div>
+			</div>
+			<div class="form-row">			
+				  <div class="form-group col-md-6">
+					  <label for="precio">Preço</label>
+					  <input type="text" id="preco" name="preco" class="form-control" placeholder="R$0.000,00" [(ngModel)]="this.dataApiService.selectedCar.preco">
+				  </div>
+			</div>
+			<div class="form-row">			
+				<div class="form-group col-md-6">
+				  <label for="autor">Ano</label>
+				</div>
+				  <input type="text" id="ano" name="ano" class="form-control" placeholder="Ano" [(ngModel)]="this.dataApiService.selectedCar.ano">
+			</div>		
+			<button type="submit" class="btn btn-primary float-right">Save Car</button>
+        </form>
+      </div>
+    </div>	
+  </div>
+</div>

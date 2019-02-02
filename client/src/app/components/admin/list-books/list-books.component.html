@@ -5,7 +5,7 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Marca</th>
+          <th scope="col">Fabricante</th>
           <th scope="col">Modelo</th>
           <th scope="col">Ano</th>
           <th scope="col">Preço</th>
@@ -18,7 +18,7 @@
         <tr *ngFor="let car of cars; index as i">
 
           <th scope="row"> {{i+1}}</th>
-          <td>{{car.marca}}</td>
+          <td>{{car.fabricante}}</td>
           <td>{{car.modelo}}</td>
           <td>{{car.ano}}</td>
           <td>{{car.preco}}</td>          
@@ -27,7 +27,7 @@
             <button class="btn btn-primary" (click)="onPreUpdateCar(car)" data-toggle="modal" data-target="#modalCar">Update</button>
           </td>
           <td>
-            <a href="/admin/list-cars" class="btn btn-danger" (click)="onDeleteCar(car.id)">Delete</a>
+            <a href="/admin/list-books" class="btn btn-danger" (click)="onDeleteCar(car.id)">Delete</a>
           </td>
         </tr>
 
@@ -36,3 +36,4 @@
     
   </div>
 </div>
+<app-modal></app-modal>

@@ -15,6 +15,13 @@ export class DataApiService {
   constructor(private http: HttpClient, private authService: AuthService) { }
   cars: Observable<any>;
   car: Observable<any>;
+  public selectedCar: CarInterface = {
+    id: null,
+    fabricante: '',
+    modelo: '',
+    ano: 0,
+	preco: ''
+  };
   
   headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
