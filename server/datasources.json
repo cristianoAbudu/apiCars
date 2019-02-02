@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "sql10.freemysqlhosting.net",
+    "port": 3306,
+    "url": " mysql://sql10276945:LCWBgmDmhz@sql10.freemysqlhosting.net:3306/sql10276945",
+    "database": "sql10276945",
+    "password": "LCWBgmDmhz",
+    "name": "db",
+    "user": "sql10276945",
+    "connector": "mysql"
+  }
+}

@@ -1,0 +1,35 @@
+https://loopback.io/doc/en/lb3/Create-a-simple-API.html
+
+ 
+https://www.freemysqlhosting.net/
+mysql pass: test123
+
+
+ mysql://user:pass@host/db
+ mysql://sql10276945:LCWBgmDmhz@sql10.freemysqlhosting.net:3306/sql10276945
+
+Server: sql10.freemysqlhosting.net
+Name: sql10276945
+Username: sql10276945
+Password: LCWBgmDmhz
+Port number: 3306
+
+CREATE TABLE `sql10276945`.`car` ( `modelo` VARCHAR(250) NOT NULL , `fabricante` VARCHAR(250) NOT NULL , `ano` INT NOT NULL , `preco` VARCHAR(250) NOT NULL,`ano` INT NOT NULL  ) ENGINE = InnoDB;
+
+ALTER TABLE `car` ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`);
+
+{
+  "realm": "string",
+  "username": "cristiano.m.almeida",
+  "email": "cristiano_de_almeida@hotmail.com",
+  "emailVerified": true,
+  "password" : "cristiano.m.almeida"
+}
+node create-lb-tables.js
+
+{
+  "id": "BnRTtWEEGXeJohIExy0AI5zZHH23wbF5Kw2MVwajjHwOHiXWO6ktFqqtMcbBv8dT",
+  "ttl": 1209600,
+  "created": "2019-02-02T00:59:21.478Z",
+  "userId": 1
+}
