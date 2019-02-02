@@ -12,12 +12,23 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 	  this.getListCars();
+	  this.getCar('1');
+	  this.getOffers();
   }
-  
   
   getListCars(){
 	this.dataApi.getAllCars()
 	.subscribe((cars) => console.log(cars) );
   }
-
+    
+  getCar(id: string){
+	this.dataApi.getCarById(id)
+	.subscribe((car) => console.log(car) );
+  }    
+  
+  getOffers(){
+	this.dataApi.getOffers()
+	.subscribe((cars) => console.log(cars) );
+  }      
+  
 }
