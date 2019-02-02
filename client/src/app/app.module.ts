@@ -22,6 +22,10 @@ import { FormsModule} from '@angular/forms';
 import { DataApiService } from 'src/app/services/data-api.service';
 import { ModalComponent } from './components/modal/modal.component';
 
+//Outros
+import { NgxSpinnerModule } from 'ngx-spinner';
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +46,8 @@ import { ModalComponent } from './components/modal/modal.component';
     BrowserModule,
     AppRoutingModule,
 	HttpClientModule, 
-	FormsModule
+	FormsModule,
+	NgxSpinnerModule 
   ],
   providers: [DataApiService],
   bootstrap: [AppComponent]

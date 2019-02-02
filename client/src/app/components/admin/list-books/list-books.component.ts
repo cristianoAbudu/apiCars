@@ -37,7 +37,7 @@ export class ListBooksComponent implements OnInit {
     this.dataApiService.selectedCar = {
       id: null,
       fabricante: '',
-      marca: '',
+      modelo: '',
       ano: 0,
       preco: ''
     };
