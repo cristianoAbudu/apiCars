@@ -1,3 +1,30 @@
-<p>
-  offers works!
-</p>
+<section id="cars">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let car of cars">
+        <div class="card_car">
+          <div class="card">
+            <div class="card-body text-center">
+              <p>
+                <img class="img-fluid" src="{{car.modelo}}.png" alt="{{car.modelo}}">
+              </p>
+              <h4 routerLink="/car/{{car.id}}" class="card-title">{{car.modelo}}</h4>
+              <p class="card-text">
+                {{car.fabricante }}
+              </p>
+              <div class="container-preco-ano">
+                <p class="badge badge-info">
+                  {{car.preco}}
+                </p>
+                <p class="badge badge-info">
+                  {{car.ano}}
+                </p>
+              </div>
+              <a href="https://lista.mercadolivre.com.br/{{car.fabricante}}-{{car.modelo}}-{{car.ano}}" class="btn btn-block btn-primary" target="_blank">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
