@@ -36,3 +36,7 @@ node create-lb-tables.js
 
 
 https://github.com/bezael/loopback3_angular6_bootstrap4/tree/master/apiBooks
+
+Usuario Admin
+admin@test.com
+admin123

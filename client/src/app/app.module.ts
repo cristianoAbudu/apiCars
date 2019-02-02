@@ -15,6 +15,8 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { Page404Component } from './components/page404/page404.component';
 
 import { HttpClientModule} from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
+
 
 //Servicos
 import { DataApiService } from 'src/app/services/data-api.service';
@@ -37,7 +39,8 @@ import { DataApiService } from 'src/app/services/data-api.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-	HttpClientModule
+	HttpClientModule, 
+	FormsModule
   ],
   providers: [DataApiService],
   bootstrap: [AppComponent]
