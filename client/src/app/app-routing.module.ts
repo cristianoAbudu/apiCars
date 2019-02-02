@@ -10,14 +10,17 @@ import { RegisterComponent } from 'src/app/components/user/register/register.com
 import { ProfileComponent } from 'src/app/components/user/profile/profile.component';
 import { Page404Component } from 'src/app/components/page404/page404.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
+
 const routes: Routes = [
 	{path: '', component: HomeComponent},
-	{path: 'offers', component: OffersComponent}, // filtro de autorizacao	
+	{path: 'offers', component: OffersComponent, canActivate: [AuthGuard] }, 
 	{path: 'car/:id', component: DetailsCarComponent},	
-	{path: 'admin/list-books', component: ListBooksComponent},	 // filtro de autorizacao	
+	{path: 'admin/list-books', component: ListBooksComponent, canActivate: [AuthGuard] },	 
 	{path: 'user/login', component: LoginComponent},	
 	{path: 'user/register', component: RegisterComponent},
-	{path: 'user/profile', component: ProfileComponent},	 // filtro de autorizacao	
+	{path: 'user/profile', component: ProfileComponent, canActivate: [AuthGuard] },	 
 	{path: '**', component: Page404Component}	
 ];
 

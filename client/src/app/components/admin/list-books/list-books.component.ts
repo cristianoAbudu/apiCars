@@ -36,14 +36,10 @@ export class ListBooksComponent implements OnInit {
   resetForm(carForm?: NgForm): void {
     this.dataApiService.selectedCar = {
       id: null,
-      titulo: '',
-      idioma: '',
-      descripcion: '',
-      portada: '',
-      precio: '',
-      link_amazon: '',
-      autor: '',
-      oferta: ''
+      fabricante: '',
+      marca: '',
+      ano: 0,
+      preco: ''
     };
   }
 
